@@ -27,6 +27,9 @@ int main()
     std::cout << "10/20 != f2 = " << (Fraction{10, 20} != f2) << std::endl;
     std::cout << "f1 != f2 = " << (f1 != f2) << std::endl;
 
+    std::cout << "Exercice 4" << std::endl;
+
+    //std::cout << "f1 == 6/8 = " << (f1 == Fraction{6, 8}) << std::endl;
 
     return 0;
 }

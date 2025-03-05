@@ -30,3 +30,10 @@ std::ostream &operator<<(std::ostream &os, Fraction const &f);
 
 bool operator==(Fraction const &f1, Fraction const &f2);
 bool operator!=(Fraction const &f1, Fraction const &f2);
+
+// Exercice 4
+
+bool operator<(Fraction const &f1, Fraction const &f2);
+bool operator<=(Fraction const &f1, Fraction const &f2);
+bool operator>(Fraction const &f1, Fraction const &f2);
+bool operator>=(Fraction const &f1, Fraction const &f2);

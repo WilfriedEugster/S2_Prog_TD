@@ -78,12 +78,32 @@ std::ostream &operator<<(std::ostream &os, Fraction const &f)
 
 bool operator==(Fraction const &f1, Fraction const &f2)
 {
-    Fraction simplified_f1 = simplify(f1);
-    Fraction simplified_f2 = simplify(f2);
-    return (simplified_f1.numerator == simplified_f2.numerator) && (simplified_f1.denominator == simplified_f2.denominator);
+    return f1.numerator * f2.denominator == f1.denominator * f2.numerator;
 }
 
 bool operator!=(Fraction const &f1, Fraction const &f2)
 {
     return !(f1 == f2);
+}
+
+// Exercice 4
+
+bool operator<(Fraction const &f1, Fraction const &f2)
+{
+    return f1.numerator * f2.denominator < f1.denominator * f2.numerator;
+}
+
+bool operator<=(Fraction const &f1, Fraction const &f2)
+{
+    return f1 < f2 || f1 == f2;
+}
+
+bool operator>(Fraction const &f1, Fraction const &f2)
+{
+    return f2 < f1;
+}
+
+bool operator>=(Fraction const &f1, Fraction const &f2)
+{
+    return f1 > f2 || f1 == f2;
 }
