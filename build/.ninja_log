@@ -1,0 +1,6 @@
+# ninja log v6
+3	29	7630909006023287	C:/Users/kingh/Documents/IMAC/prog/S2_Prog_TD/build/CMakeFiles/cmake.verify_globs	c59e60ef76eb342
+31	1572	7630909006309123	CMakeFiles/main.dir/src/main.cpp.obj	6ade57b56659254e
+40	1796	7630909006399121	CMakeFiles/main.dir/src/utils.cpp.obj	d07a1d838d07d11a
+36	1575	7630909006359135	CMakeFiles/main.dir/src/fraction.cpp.obj	1cebfcf9f47af52
+1796	2057	7630909023964640	C:/Users/kingh/Documents/IMAC/prog/S2_Prog_TD/TD1/bin/Debug/main.exe	df8427e48bf80e83
