@@ -33,12 +33,11 @@ void display(std::vector<int> const& vec){
 // Exercice 4
 
 std::optional<size_t> search(std::vector<int> const& vec, int val, size_t left, size_t right){
-    //std::cout << "search " << val << " in [" << left << " : " << right << "]" << std::endl;
     if (right < left)
         return std::nullopt;
 
     size_t middle {(left + right) / 2};
-    //std::cout << "middle : vec[" << middle << "] = " << vec[middle] << std::endl;
+    
     if (vec[middle] == val)
         return middle;
 

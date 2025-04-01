@@ -55,6 +55,6 @@ void quick_sort(std::vector<int> & vec, size_t const left, size_t const right){
     quick_sort(vec, pivot + 1, right);
 }
 
-void quick_sort(std::vector<int> & vec) {
+void quick_sort(std::vector<int> & vec){
     quick_sort(vec, 0, vec.size() - 1);
 }
