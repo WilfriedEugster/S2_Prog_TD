@@ -10,3 +10,7 @@ std::string entree(){
     std::getline(std::cin, expression);
     return expression;
 }
+
+bool is_floating(std::string const& s){
+    //COMPLETER
+}
