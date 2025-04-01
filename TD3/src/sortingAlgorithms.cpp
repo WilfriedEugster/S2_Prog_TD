@@ -2,6 +2,7 @@
 #include "vectorManaging.hpp"
 
 #include <vector>
+#include <iostream>
 
 
 // Exercice 1 (tri itératif)
@@ -25,43 +26,20 @@ void bubble_sort(std::vector<int> & vec){
     }
 }
 
-void selection_sort(std::vector<int> & vec){
-
-}
-
 
 // Exercice 2 (tri récursif)
 
-/*
-partitionner(tableau T, entier premier, entier dernier, entier pivot)
-    échanger T[pivot] et T[dernier]  // échange le pivot avec le dernier du tableau , le pivot devient le dernier du tableau
-    j := premier
-    pour i de premier à dernier - 1 // la boucle se termine quand i = (dernier élément du tableau).
-        si T[i] <= T[dernier] alors
-            échanger T[i] et T[j]
-            j := j + 1
-    échanger T[dernier] et T[j]
-    renvoyer j
-
-tri_rapide(tableau T, entier premier, entier dernier)
-        si premier < dernier alors
-            pivot := choix_pivot(T, premier, dernier)
-            pivot := partitionner(T, premier, dernier, pivot)
-            tri_rapide(T, premier, pivot-1)
-            tri_rapide(T, pivot+1, dernier)
-*/
-
 size_t quick_sort_partition(std::vector<int> & vec, size_t left, size_t right, size_t const pivot){
     swap(vec, pivot, right);
-    size_t j {left};
+    size_t first_bigger_element {left};
     for (size_t i {left}; i < right; i++){
         if (vec[i] <= vec[right]){
-            swap(vec, i, j);
-            j++;
+            swap(vec, i, first_bigger_element);
+            first_bigger_element++;
         }
     }
-    swap(vec, right, j);
-    return j;
+    swap(vec, right, first_bigger_element);
+    return first_bigger_element;
 }
 
 void quick_sort(std::vector<int> & vec, size_t const left, size_t const right){
@@ -70,7 +48,10 @@ void quick_sort(std::vector<int> & vec, size_t const left, size_t const right){
 
     size_t pivot = right;
     pivot = quick_sort_partition(vec, left, right, pivot);
-    quick_sort(vec, left, pivot - 1);
+
+    if (left < pivot)
+        quick_sort(vec, left, pivot - 1);
+    
     quick_sort(vec, pivot + 1, right);
 }
 
