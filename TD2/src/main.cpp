@@ -1,11 +1,15 @@
+
+#include "exercises.hpp"
+
 #include <iostream>
-#include "npi.hpp"
+#include <string>
+
 
 int main()
 {
     std::cout << "DEBUT" << std::endl;
 
-    entree();
+    ex1();
 
     std::cout << "FIN" << std::endl;
     return 0;
