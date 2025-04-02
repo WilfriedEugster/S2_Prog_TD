@@ -9,7 +9,11 @@ int main()
 {
     std::cout << "DEBUT" << std::endl;
 
-    ex1();
+    //ex1();
+
+    std::cout << std::endl;
+
+    ex2();
 
     std::cout << "FIN" << std::endl;
     return 0;
