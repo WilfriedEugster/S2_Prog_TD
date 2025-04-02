@@ -9,12 +9,12 @@
 
 void ex1(){
     std::cout << "Exercice 1 (Evaluation NPI)" << std::endl;
-
+    /*
     std::string input = entree();
     std::vector<std::string> vec = split_string(input);
     for(std::string s : vec)
         std::cout << s << std::endl;
-    
+    */
 }
 
 void ex2(){
