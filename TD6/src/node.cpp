@@ -2,6 +2,7 @@
 
 
 #include <iostream>
+#include <algorithm>
 
 
 Node* create_node(int value){
@@ -93,4 +94,50 @@ Node*& most_left(Node*& node){
         return node;
         
     return most_left(node->left);
+}
+
+void remove_node(Node*& node){
+    if (node->is_leaf()){
+        delete node;
+        node = nullptr;
+        return;
+    }
+
+    if (node->left == nullptr){
+        Node* node2 = node;
+        node = node->right;
+        delete node2;
+        return;
+    }
+
+    if (node->right == nullptr){
+        Node* node2 = node;
+        node = node->left;
+        delete node2;
+        return;
+    }
+
+    Node* next_descendant = most_left(node->right);
+    node->value = next_descendant->value;
+    remove(node->right, next_descendant->value);
+}
+
+bool remove(Node*& node, int value){
+    if (node == nullptr)
+        return false;
+
+    if (node->value == value){
+        remove_node(node);
+        return true;
+    }
+
+    if (value < node->value)
+        return remove(node->left, value);
+    else
+        return remove(node->right, value);
+}
+
+void delete_tree(Node* node){
+    node->delete_childs();
+    delete node;
 }
