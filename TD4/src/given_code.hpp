@@ -1,7 +1,8 @@
 #pragma once
 
 #include <vector>
-#include <string>
 
 
-std::vector<std::string> split_string(std::string const& s);
+std::vector<int> generate_random_vector(size_t const size, int const max);
+
+

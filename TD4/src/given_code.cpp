@@ -1,12 +1,11 @@
 #include "given_code.hpp"
 
-#include <vector>
-#include <string>
-#include <sstream>
-#include <iterator>
+#include <cstdlib>
+#include <algorithm>
 
 
-std::vector<std::string> split_string(std::string const& s){
-    std::istringstream in(s);
-    return std::vector<std::string>(std::istream_iterator<std::string>(in), std::istream_iterator<std::string>()); 
+std::vector<int> generate_random_vector(size_t const size, int const max = 100){
+    std::vector<int> vec(size);
+    std::generate(vec.begin(), vec.end(), [&max]() { return std::rand() % max;} );
+    return vec;
 }
