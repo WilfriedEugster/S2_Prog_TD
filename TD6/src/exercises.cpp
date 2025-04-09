@@ -68,7 +68,27 @@ void ex1(){
 }
 
 void ex2(){
-    std::cout << "Exercice 2 (Utilisation)" << std::endl;
+    std::cout << "Exercice 2 (Utilisation)" << std::endl << std::endl;
 
-    
+    std::cout << "1." << std::endl;
+    Node* root {create_node(5)};
+    std::cout << "Creation racine : " << root->value << std::endl;
+    std::vector<int> valeurs {3, 7, 2, 4, 6, 8, 1, 9, 0};
+    insertion_valeurs(root, valeurs);
+
+    std::cout << "2." << std::endl;
+    std::cout << "Affichage infixe : ";
+    root->display_infixe();
+    std::cout << std::endl;
+    std::cout << "(Les * representent l'absence de fils)" << std::endl << std::endl;
+
+    std::cout << "4." << std::endl;
+    int somme {0};
+    for(auto n : root->prefixe()){
+        somme += n->value;
+    }
+    std::cout << "Somme des valeurs des noeud : " << somme << std::endl << std::endl;
+
+    std::cout << "5." << std::endl;
+    std::cout << "Hauteur de l'arbre : " << root->height() << std::endl << std::endl;
 }
