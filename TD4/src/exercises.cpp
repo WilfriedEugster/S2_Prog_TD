@@ -16,8 +16,8 @@ void ex1(){
     5. Utiliser la fonction std::sort pour trier le vecteur.
     6. Utiliser la fonction std::accumulate pour calculer la somme des éléments du vecteur (par défaut, la fonction std::accumulate utilise l'opérateur + entre les éléments).
     */
-   
-    std::cout << "1. Remplissage du vecteur" << std::endl;
+
+    std::cout << "1. Remplissage du vecteur" << std::endl << std::endl;
     std::vector<int> vec = generate_random_vector(20, 100);
     
     std::cout << "2. Affichage du vecteur" << std::endl;
