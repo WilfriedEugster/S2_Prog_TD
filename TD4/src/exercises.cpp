@@ -1,7 +1,7 @@
 #include "exercises.hpp"
 
 #include "given_code.hpp"
-#include "utils.hpp"
+#include "functions.hpp"
 
 #include <iostream>
 #include <algorithm>
@@ -10,15 +10,6 @@
 
 void ex1(){
     std::cout << "Exercice 1 (Vector and Algorithm)" << std::endl << std::endl;
-    
-    /*
-    1. Remplir un std::vector avec des nombres entiers aléatoires compris entre 0 et 100.
-    2. Utiliser les itérateurs et les méthodes begin et end pour afficher les valeurs du vecteur à l'aide d'une boucle for.
-    3. Chercher si un nombre saisi par l'utilisateur est présent dans le vecteur à l'aide de la fonction std::find et afficher un message adapté.
-    4. Utiliser la fonction std::count pour compter le nombre d'occurrences d'un nombre entier dans le vecteur. Vous pouvez trouver la documentation de la fonction std::count ici.
-    5. Utiliser la fonction std::sort pour trier le vecteur.
-    6. Utiliser la fonction std::accumulate pour calculer la somme des éléments du vecteur (par défaut, la fonction std::accumulate utilise l'opérateur + entre les éléments).
-    */
 
     // 1.
 
@@ -80,9 +71,19 @@ void ex1(){
 }
 
 void ex2(){
-    std::cout << "Exercice 2 (String)" << std::endl;
+    std::cout << "Exercice 2 (String)" << std::endl << std::endl;
 
-    
+    std::string sentence {"  Voici une    phrase "};
+
+    std::cout << "1. Phrase : \"" << sentence << "\"" << std::endl;
+    std::cout << "Taille du premier mot : " << first_word_length(sentence) << std::endl;
+    std::cout << std::endl;
+
+    std::cout << "2. Decoupage de la phrase en mots :" << std::endl;
+    auto splitted_sentence {split_string(sentence)};
+    for(auto word : splitted_sentence)
+        std::cout << "\"" << word << "\"" << std::endl;
+    std::cout << std::endl;
 }
 
 void ex3(){
