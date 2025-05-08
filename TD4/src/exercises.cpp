@@ -87,7 +87,15 @@ void ex2(){
 }
 
 void ex3(){
-    std::cout << "Exercice 3 (Palindrome)" << std::endl;
+    std::cout << "Exercice 3 (Palindrome)" << std::endl << std::endl;
 
-    
+    std::cout << "1." << std::endl;
+
+    palindrome_test("ligysdflkfg");
+    palindrome_test("kayak");
+    palindrome_test("abcabc");
+    palindrome_test("bonjourruojnob");
+    palindrome_test("");
+
+    std::cout << std::endl;
 }

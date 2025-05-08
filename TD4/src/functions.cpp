@@ -39,3 +39,20 @@ std::vector<std::string> split_string(std::string const& str){
 
     return output;
 }
+
+// Exercice 3
+
+bool is_palindrome(std::string const& str){
+    return std::equal(str.begin(), str.begin()+str.size()/2, str.rbegin(), str.rbegin()+str.size()/2);
+}
+
+void palindrome_test(std::string const& str){
+    std::cout << "\"" << str << "\" ";
+    
+    if (is_palindrome(str))
+        std::cout << "est";
+    else
+        std::cout << "n'est pas";
+
+    std::cout << " un palindrome" << std::endl;
+}

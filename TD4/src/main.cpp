@@ -8,11 +8,10 @@
 
 int main()
 {
-    std::cout << "DEBUT" << std::endl;
 
     std::srand(std::time(nullptr));
 
-    //ex1();
+    ex1();
 
     std::cout << std::endl;
     
@@ -20,8 +19,7 @@ int main()
 
     std::cout << std::endl;
 
-    //ex3();
+    ex3();
     
-    std::cout << "FIN" << std::endl;
     return 0;
 }
