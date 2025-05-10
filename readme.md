@@ -8,7 +8,8 @@
 
 # TD en cours :
 
+- TD5
+
 # TD non commencés :
 
-- TD5
 - TD7
