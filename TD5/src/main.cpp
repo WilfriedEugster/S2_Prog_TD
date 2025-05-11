@@ -1,20 +1,21 @@
-
-#include "exercises.hpp"
+#include "ex1.hpp"
+#include "ex2.hpp"
+#include "ex3.hpp"
 
 #include <iostream>
 
 int main()
 {
 
-    ex1();
+    test_ex1();
 
     std::cout << std::endl;
     
-    //ex2();
+    test_ex2();
 
-    //std::cout << std::endl;
+    std::cout << std::endl;
 
-    //ex3();
+    //test_ex3();
     
     return 0;
 }
