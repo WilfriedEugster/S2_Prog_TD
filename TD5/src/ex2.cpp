@@ -97,9 +97,9 @@ void test_ex2(){
     for(size_t i {0}; i < insect_values.size(); i++){
         std::string insect_name {insect_to_string.at(insect_values[i])};
         float insect_probability {expected_insect_probabilities[i]};
-        std::cout << insect_probability << " (" << insect_name << ")" << std::endl;
+        std::cout << insect_probability << " : " << insect_name << std::endl;
     }
-    
+
     std::cout << std::endl;
     
 
@@ -120,8 +120,22 @@ void test_ex2(){
     for(Insect insect : insect_values){
         std::string insect_name {insect_to_string.at(insect)};
         int insect_count {insect_to_count[insect]};
-        std::cout << insect_count << " (" << insect_name << ")" << std::endl;
+        std::cout << insect_count << " : " << insect_name << std::endl;
     }
 
     std::cout << std::endl;
+
+
+    std::cout << "3. Calcul des probabilites, conversion du resultat en vecteur de comptage" << std::endl;
+
+    std::vector<int> insect_counts {};
+
+    for(Insect insect : insect_values){
+        int insect_count {insect_to_count[insect]};
+        insect_counts.push_back(insect_count);
+    }
+
+    std::cout << std::endl;
+
+    // 4.
 }
