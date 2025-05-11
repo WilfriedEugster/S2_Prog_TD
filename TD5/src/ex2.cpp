@@ -89,16 +89,39 @@ std::vector<float> probabilities_from_count(std::vector<int> const& counts){
 void test_ex2(){
     std::cout << "Exercice 2 (Analyse du nombre d'insectes)" << std::endl << std::endl;
 
+
     std::cout << "1. Probabilites attendues des insectes :" << std::endl;
+
     auto expected_insect_probabilities {probabilities_from_count(expected_insect_counts)};
+
     for(size_t i {0}; i < insect_values.size(); i++){
         std::string insect_name {insect_to_string.at(insect_values[i])};
         float insect_probability {expected_insect_probabilities[i]};
         std::cout << insect_probability << " (" << insect_name << ")" << std::endl;
     }
+    
     std::cout << std::endl;
-    /*
-    std::cout << "2.  :" << std::endl;
-    std::vector<std::pair<Insect, int>>  get_insect_observations(1000, expected_insect_probabilities)
-    */
+    
+
+    std::cout << "2. Observations generees :" << std::endl;
+
+    std::vector<std::pair<Insect, int>> insect_count_pairs {get_insect_observations(1000, expected_insect_probabilities)};
+    std::unordered_map<Insect, int> insect_to_count {};
+
+    for(auto insect_count_pair : insect_count_pairs){
+        Insect insect {insect_count_pair.first};
+        int number {insect_count_pair.second};
+        if (insect_to_count.find(insect) == insect_to_count.end())
+            insect_to_count[insect] = number;
+        else
+            insect_to_count[insect] += number;
+    }
+    
+    for(Insect insect : insect_values){
+        std::string insect_name {insect_to_string.at(insect)};
+        int insect_count {insect_to_count[insect]};
+        std::cout << insect_count << " (" << insect_name << ")" << std::endl;
+    }
+
+    std::cout << std::endl;
 }
