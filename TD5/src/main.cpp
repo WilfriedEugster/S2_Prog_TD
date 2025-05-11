@@ -10,11 +10,11 @@ int main()
 
     std::cout << std::endl;
     
-    ex2();
+    //ex2();
 
-    std::cout << std::endl;
+    //std::cout << std::endl;
 
-    ex3();
+    //ex3();
     
     return 0;
 }
