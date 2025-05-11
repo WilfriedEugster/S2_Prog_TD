@@ -4,6 +4,7 @@
 #include <unordered_map>
 #include <string>
 #include <numeric>
+#include <cmath>
 
 
 std::vector<Insect> const insect_values {
@@ -108,13 +109,13 @@ void test_ex2(){
     std::vector<std::pair<Insect, int>> insect_count_pairs {get_insect_observations(1000, expected_insect_probabilities)};
     std::unordered_map<Insect, int> insect_to_count {};
 
+    for(Insect insect : insect_values)
+        insect_to_count[insect] = 0;
+
     for(auto insect_count_pair : insect_count_pairs){
         Insect insect {insect_count_pair.first};
         int number {insect_count_pair.second};
-        if (insect_to_count.find(insect) == insect_to_count.end())
-            insect_to_count[insect] = number;
-        else
-            insect_to_count[insect] += number;
+        insect_to_count[insect] += number;
     }
     
     for(Insect insect : insect_values){
@@ -126,16 +127,35 @@ void test_ex2(){
     std::cout << std::endl;
 
 
-    std::cout << "3. Calcul des probabilites, conversion du resultat en vecteur de comptage" << std::endl;
+    std::cout << "3. Conversion du resultat en vecteur de comptage. Calcul des probabilites." << std::endl;
 
-    std::vector<int> insect_counts {};
+    std::vector<int> observed_insect_counts {};
 
     for(Insect insect : insect_values){
         int insect_count {insect_to_count[insect]};
-        insect_counts.push_back(insect_count);
+        observed_insect_counts.push_back(insect_count);
     }
+
+    auto observed_insect_probabilities {probabilities_from_count(observed_insect_counts)};
 
     std::cout << std::endl;
 
-    // 4.
+    
+    std::cout << "4. Probabilites des insectes observes vs probabilites attendues :" << std::endl;
+
+    for(size_t i {0}; i < insect_values.size(); i++){
+        Insect insect {insect_values[i]};
+        std::string insect_name {insect_to_string.at(insect)};
+
+        float observed_probability {observed_insect_probabilities[i]};
+        float expected_probability {expected_insect_probabilities[i]};
+
+        float difference {observed_probability - expected_probability};
+        bool difference_is_small_enough {std::abs(difference) < 0.01};
+        std::string comment {(difference_is_small_enough) ? "OK" : "BAD"};
+
+        std::cout << insect_name << " : " << observed_probability << " vs " << expected_probability << " " << comment << std::endl;
+    }
+
+    std::cout << std::endl;
 }
