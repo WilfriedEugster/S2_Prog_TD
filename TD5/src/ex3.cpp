@@ -98,7 +98,7 @@ void test_ex3(){
     }
     std::cout << std::endl << std::endl;
 
-    std::cout << "3. Génération de 100 cartes aleatoires. Affichage du nombre d'exemplaires de chaque carte possible :" << std::endl;
+    std::cout << "4. Génération de 100 cartes aleatoires. Affichage du nombre d'exemplaires de chaque carte possible :" << std::endl;
     std::unordered_map<Card, int> card_to_count;
     std::vector<Card> card_sample {get_cards(100)};
     for(Card c : all_cards){
