@@ -9,9 +9,9 @@
 
 # TD en cours :
 
-# TD non commencés :
-
 - TD7 (ex1)
+
+# TD non commencés :
 
 # Précision :
 

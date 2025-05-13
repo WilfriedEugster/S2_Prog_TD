@@ -7,11 +7,11 @@
 int main()
 {
 
-    test_ex1();
+    //test_ex1();
 
     std::cout << std::endl;
     
-    test_ex2();
+    //test_ex2();
 
     std::cout << std::endl;
 
