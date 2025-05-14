@@ -7,6 +7,8 @@ project(${FolderName}_Project)
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/bin/${CMAKE_BUILD_TYPE})
 
+set(CMAKE_CXX_STANDARD 20)
+
 if (MSVC)
     add_compile_options(/W3)
 else()
